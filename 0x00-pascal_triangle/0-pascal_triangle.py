@@ -30,11 +30,11 @@ def pascal_triangle(n):
         return []
 
     big_list = []
-    for num in range(1, n):
+    for num in range(1, n + 1):
         if num == 1:
             big_list.append([1])
         elif num == 2:
-            big_list.append([1, 2, 1])
+            big_list.append([1, 1])
         else:
             big_list.append(create_list(big_list[num - 2]))
     return big_list
