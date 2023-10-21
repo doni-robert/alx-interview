@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Contains the log_parsing module """
 import sys
 import re
@@ -42,3 +42,4 @@ except KeyboardInterrupt:
     print(f'File size: {total_size}')
     for k, v in status_code_count.items():
         print(f'{k}: {v}')
+
