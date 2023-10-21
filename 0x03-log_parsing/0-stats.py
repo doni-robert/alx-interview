@@ -22,8 +22,8 @@ pattern = (
         )
 count = 0
 
-for line in sys.stdin:
-    try:
+try:
+    for line in sys.stdin:
         match = re.match(pattern, line)
         if match:
             total_size += int(match.group(4))
@@ -38,7 +38,7 @@ for line in sys.stdin:
             for k, v in status_code_count.items():
                 print(f'{k}: {v}')
             count = 0
-    except KeyboardInterrupt:
-        print(f'File size: {total_size}')
-        for k, v in status_code_count.items():
-            print(f'{k}: {v}')
+except KeyboardInterrupt:
+    print(f'File size: {total_size}')
+    for k, v in status_code_count.items():
+        print(f'{k}: {v}')
