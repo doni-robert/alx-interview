@@ -24,6 +24,11 @@ count = 0
 
 try:
     for line in sys.stdin:
+        if line is None:
+            print(f'File size: {total_size}')
+            for k, v in status_code_count.items():
+                print(f'{k}: {v}')
+            count = 0
         match = re.match(pattern, line)
         if match:
             total_size += int(match.group(4))
@@ -43,3 +48,7 @@ except KeyboardInterrupt:
     for k, v in status_code_count.items():
         print(f'{k}: {v}')
 
+finally:
+    print(f'File size: {total_size}')
+    for k, v in status_code_count.items():
+        print(f'{k}: {v}')
