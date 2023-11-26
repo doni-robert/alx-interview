@@ -12,6 +12,8 @@ def makeChange(coins, total):
     Return:
         the fewest number of coins needed
     """
+    if total <= 0:
+        return 0
     mergeSort(coins, 0, len(coins) - 1)
     count = 0
 
